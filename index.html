@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pocket Pal — Money made simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#top" aria-label="Pocket Pal home"><span class="brand-mark">✦</span><span>Pocket<span>Pal</span></span></a>
+      <div class="profile-card"><div class="avatar">🌈</div><div><strong>Hey, Alex!</strong><small>Money explorer</small></div><button class="more" aria-label="More options">•••</button></div>
+      <nav aria-label="Main navigation">
+        <a class="nav-link active" href="#top"><span>⌂</span> Overview</a>
+        <a class="nav-link" href="#activity"><span>↕</span> My money</a>
+        <a class="nav-link" href="#bills"><span>▣</span> Bills &amp; IOUs <b class="nav-count">3</b></a>
+        <a class="nav-link" href="#goal"><span>◉</span> Goals</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="streak"><span>🔥</span><div><b>4 day streak!</b><small>Keep your pocket power up</small></div></div><button class="guide-link" id="openGuide">☼ How Pocket Pal works</button><div class="mini-tip">“Little steps add up to big dreams.”<br><b>— Pocket Pal</b></div></div>
+    </aside>
+
+    <main id="top">
+      <header class="topbar"><button class="mobile-menu" aria-label="Open menu">☰</button><div class="crumb">Tuesday, September 6 <span>•</span> Your money HQ</div><button class="bell" aria-label="Notifications">♢<i></i></button><button class="help" id="openGuideTop">Need a hand?</button></header>
+      <div class="content">
+        <section class="welcome"><div><p class="eyebrow">YOUR POCKET UNIVERSE</p><h1>Make your money <em>feel good.</em> <span>✦</span></h1><p class="intro">Keep track of what comes in, what goes out, and the dream you’re building toward.</p></div><div class="mascot" aria-hidden="true"><div class="sparkle s1">✦</div><div class="planet">☻</div><div class="orbit o1"></div><div class="orbit o2"></div></div></section>
+
+        <section class="stats-grid" aria-label="Money summary">
+          <article class="card balance-card"><div class="card-label">AVAILABLE TO SPEND <span class="info">i</span></div><div class="money" id="balance">$128.40</div><div class="trend"><span>↗ 12%</span> vs. last week</div><div class="card-footer"><span>Updated just now</span><span class="coin-stack">●●●</span></div></article>
+          <article class="card income-card"><div class="card-label">MONEY IN <span class="period">THIS MONTH⌄</span></div><div class="money green" id="income">$240.00</div><div class="meter"><i style="width:72%"></i></div><div class="meter-note"><span>72% of your usual</span><span>$330 goal</span></div></article>
+          <article class="card out-card"><div class="card-label">MONEY OUT <span class="period">THIS MONTH⌄</span></div><div class="money coral" id="outgo">$111.60</div><div class="meter coral-meter"><i style="width:34%"></i></div><div class="meter-note"><span>Nice! Under budget</span><span>$330 limit</span></div></article>
+        </section>
+
+        <section class="middle-grid">
+          <article class="card goal-card" id="goal"><div class="section-heading"><div><p class="eyebrow">BIG DREAM ENERGY</p><h2>My new headphones <span>🎧</span></h2></div><button class="dots" aria-label="Goal options">•••</button></div><div class="goal-body"><div class="donut" style="--progress: 64%"><div><strong>$192</strong><small>of $300</small></div></div><div class="goal-copy"><p>You’re <strong>$108 away</strong> from your goal!</p><div class="goal-bar"><i style="width:64%"></i></div><small>64% complete <span>Almost there!</span></small><button class="primary-btn" id="addToGoal">＋ Add money to goal</button></div></div></article>
+          <article class="card quest-card"><div class="quest-icon">⚡</div><p class="eyebrow">POCKET QUEST</p><h2>Find 3 coins<br>this week</h2><p>Log three money moments to earn a shiny badge.</p><div class="quest-progress"><i></i><span>2 / 3 found</span></div><button class="text-btn" id="logMoment">Log a money moment →</button></article>
+        </section>
+
+        <section class="lower-grid"><article class="card activity-card" id="activity"><div class="section-heading"><div><p class="eyebrow">YOUR MONEY TRAIL</p><h2>Recent activity</h2></div><button class="view-all" id="viewAll">View all →</button></div><div class="activity-list" id="activityList"><div class="activity-row"><span class="activity-icon purple">🎨</span><div><strong>Art commission</strong><small>Today · Money in</small></div><b class="amount positive">+$45.00</b></div><div class="activity-row"><span class="activity-icon yellow">🍕</span><div><strong>Pizza night</strong><small>Yesterday · Money out</small></div><b class="amount negative">−$12.50</b></div><div class="activity-row"><span class="activity-icon blue">💵</span><div><strong>Weekly allowance</strong><small>Sep 2 · Money in</small></div><b class="amount positive">+$25.00</b></div></div><form class="add-form" id="addForm"><input id="itemName" required placeholder="What happened?" aria-label="Description"><input id="itemAmount" required type="number" min="0.01" step="0.01" placeholder="$ amount" aria-label="Amount"><select id="itemType" aria-label="Money direction"><option value="in">Money in</option><option value="out">Money out</option></select><button class="primary-btn" type="submit">Add</button></form></article>
+          <article class="card bills-card" id="bills"><div class="section-heading"><div><p class="eyebrow">DON’T FORGET</p><h2>Coming up</h2></div><button class="dots" aria-label="Bills options">•••</button></div><div class="bill-list"><div class="bill-row"><span class="bill-icon netflix">N</span><div><strong>Netflix</strong><small>Due in 2 days</small></div><b>$6.99</b></div><div class="bill-row"><span class="bill-icon friend">🤝</span><div><strong>Jordan</strong><small>IOU · Due Friday</small></div><b>$10.00</b></div><div class="bill-row"><span class="bill-icon phone">⌁</span><div><strong>Phone plan</strong><small>Due Sep 15</small></div><b>$25.00</b></div></div><button class="outline-btn" id="paidBtn">Mark something as paid</button></article></section>
+        <footer>Made for small steps and big dreams <span>✦</span> <a href="#top">Back to top</a></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop" id="guideModal" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="guideTitle"><button class="close-modal" id="closeGuide" aria-label="Close">×</button><div class="modal-star">✦</div><p class="eyebrow">POCKET PAL 101</p><h2 id="guideTitle">Your money, your adventure.</h2><p>Think of Pocket Pal as your friendly money sidekick. Add money when you earn it, log it when you spend it, and choose a goal that makes you excited.</p><div class="guide-steps"><div><b>1</b><span><strong>Track it</strong><small>Add your money moments so nothing gets lost.</small></span></div><div><b>2</b><span><strong>See it</strong><small>Check your balance and upcoming bills at a glance.</small></span></div><div><b>3</b><span><strong>Grow it</strong><small>Watch your progress as you get closer to your dream.</small></span></div></div><button class="primary-btn wide" id="gotIt">Got it, let’s go!</button></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
